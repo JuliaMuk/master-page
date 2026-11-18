@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10121b">
+  <title>Сборщик страниц</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">&lt;/&gt;</span><span>Сборщик страниц<small>HTML + CSS · без установки</small></span></div>
+    <div class="top-actions">
+      <button class="button quiet" id="resetBtn" title="Вернуть исходный код выбранного шаблона">Сбросить</button>
+      <button class="button primary" id="downloadBtn">Скачать сайт</button>
+    </div>
+  </header>
+  <main class="workspace">
+    <section class="editor-pane" aria-label="Редактор кода">
+      <div class="pane-head"><span class="pane-title">Редактор</span>
+        <select class="template-select" id="templateSelect" aria-label="Выберите шаблон">
+          <option value="event">Афиша события</option>
+          <option value="portfolio">Портфолио</option>
+          <option value="cafe">Кафе</option>
+        </select>
+      </div>
+      <div class="edit-tabs" role="tablist">
+        <button class="tab active" data-tab="html" role="tab" aria-selected="true"><span class="language-dot"></span>index.html</button>
+        <button class="tab" data-tab="css" role="tab" aria-selected="false"><span class="language-dot"></span>style.css</button>
+      </div>
+      <div class="editor-info" id="editorInfo">Меняйте текст и блоки. Здесь находится HTML-разметка страницы.</div>
+      <div class="code-wrap"><textarea class="code-editor" id="codeEditor" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Исходный код"></textarea></div>
+      <div class="editor-footer"><span class="save-state"><i class="save-dot"></i><span id="saveState">Изменения сохраняются в этом браузере</span></span><span id="lineCount">HTML</span></div>
+    </section>
+    <section class="preview-pane" aria-label="Предпросмотр сайта">
+      <div class="pane-head preview-head"><span class="pane-title">Предпросмотр</span><div class="preview-tools"><div class="device-group" aria-label="Размер предпросмотра"><button class="device active" id="desktopBtn">Компьютер</button><button class="device" id="mobileBtn">Телефон</button></div><button class="button" id="refreshBtn" title="Обновить предпросмотр">↻</button></div></div>
+      <div class="preview-stage"><iframe class="preview-frame" id="preview" title="Предпросмотр сайта" sandbox=""></iframe></div>
+      <div class="preview-caption"><span>Предпросмотр обновляется автоматически</span><span class="mobile-note"> · прокрутите для просмотра</span><span>HTML/CSS</span></div>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+</body>
+</html>
